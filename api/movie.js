@@ -112,9 +112,11 @@ const movies = {
 };
 
 export default function handler(req, res) {
+  console.log('Movie API called:', req.method, req.url, req.query);
+  
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   // Handle preflight requests
@@ -152,7 +154,7 @@ export default function handler(req, res) {
   }
   
   const randomMovie = selectedMovies[Math.floor(Math.random() * selectedMovies.length)];
-  const movieLanguage = movies.hindi.includes(randomMovie) ? 'Hindi' : 'English';
+  const movieLanguage = movies.hindi.some(m => m.title === randomMovie.title) ? 'Hindi' : 'English';
   
   res.status(200).json({
     movie: randomMovie.title,

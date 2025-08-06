@@ -1,9 +1,0 @@
-{
-  "name": "damsharas-api",
-  "version": "1.0.0",
-  "description": "API functions for Damsharas movie generator",
-  "main": "index.js",
-  "engines": {
-    "node": ">=18.0.0"
-  }
-} 
