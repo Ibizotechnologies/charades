@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dumb charades - Movie Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <i class="fas fa-film"></i>
+                dumb charades
+            </h1>
+            <p class="subtitle">Discover Amazing Movies</p>
+        </header>
+
+        <main class="main-content">
+            <div class="controls">
+                <div class="language-selector">
+                    <button class="lang-btn active" data-language="both">
+                        <i class="fas fa-globe"></i>
+                        All Movies
+                    </button>
+                    <button class="lang-btn" data-language="hindi">
+                        <i class="fas fa-flag"></i>
+                        Hindi
+                    </button>
+                    <button class="lang-btn" data-language="english">
+                        <i class="fas fa-flag-usa"></i>
+                        English
+                    </button>
+                </div>
+
+                <div class="timer-settings">
+                    <label for="timer">Show Duration (seconds):</label>
+                    <input type="range" id="timer" min="3" max="15" value="5" class="timer-slider">
+                    <span id="timer-value">5s</span>
+                </div>
+
+                <div class="year-filter">
+                    <label for="yearSelect">Year Filter:</label>
+                    <select id="yearSelect" class="year-select">
+                        <option value="all">All Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="movie-display">
+                <div class="movie-card" id="movieCard">
+                    <div class="movie-content">
+                        <i class="fas fa-play-circle movie-icon"></i>
+                        <h2 class="movie-title" id="movieTitle">Click to Generate Movie</h2>
+                        <p class="movie-language" id="movieLanguage"></p>
+                        <p class="movie-year" id="movieYear"></p>
+                    </div>
+                    <div class="timer-display" id="timerDisplay">
+                        <div class="timer-circle">
+                            <span id="timerCountdown">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="generate-btn" id="generateBtn">
+                    <i class="fas fa-random"></i>
+                    Generate Movie
+                </button>
+                <button class="hide-btn" id="hideBtn" style="display: none;">
+                    <i class="fas fa-eye-slash"></i>
+                    Hide Movie
+                </button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 dumb charades - Movie Generator</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
